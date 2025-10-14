@@ -3,7 +3,7 @@ USE firma;
 CREATE SCHEMA ksiegowosc;
 
 
---tabela zawieraj¹ca dane pracowników
+--tabela zawierajÄ…ca dane pracownikÃ³w
 CREATE TABLE ksiegowosc.pracownicy
 (
 	id_pracownika INT PRIMARY KEY,
@@ -12,7 +12,7 @@ CREATE TABLE ksiegowosc.pracownicy
 	adres VARCHAR(70),
 	telefon VARCHAR(9)
 );
---tabela zawieraj¹ca z godzinami, pierwszy FK ³¹cz¹cy id_pracownika
+--tabela zawierajÄ…ca z godzinami, pierwszy FK Å‚Ä…czÄ…cy id_pracownika
 CREATE TABLE ksiegowosc.godziny
 (
 	id_godziny INT PRIMARY KEY,
@@ -31,7 +31,7 @@ CREATE TABLE ksiegowosc.pensja
 	kwota DECIMAL(8,2)
 );
 
---tabela zawieraj¹ce dane o przyznanych premiach lub ich braku
+--tabela zawierajÄ…ce dane o przyznanych premiach lub ich braku
 CREATE TABLE ksiegowosc.premia
 (
 	id_premii INT PRIMARY KEY,
@@ -39,7 +39,7 @@ CREATE TABLE ksiegowosc.premia
 	kwota DECIMAL(8,2)
 );
 
---tabela wynagrodzenie, powi¹zania z ka¿d¹ z poprzednio stworzonych tabel
+--tabela wynagrodzenie, powiÄ…zania z kaÅ¼dÄ… z poprzednio stworzonych tabel
 CREATE TABLE ksiegowosc.wynagrodzenie
 (
 	id_wynagrodzenia INT PRIMARY KEY, 
@@ -61,50 +61,50 @@ CREATE TABLE ksiegowosc.wynagrodzenie
 
 
 
--- Dla wygody poprosi³em model jêzykowy o wygenerowanie danych do tabeli
+-- Dla wygody poprosiÅ‚em model jÄ™zykowy o wygenerowanie danych do tabeli
 
 INSERT INTO ksiegowosc.pracownicy (id_pracownika, imie, nazwisko, adres, telefon) VALUES
 (1, 'Jan', 'Kowalski', 'ul. Kwiatowa 5, Warszawa', '123456789'),
-(2, 'Anna', 'Nowak', 'ul. S³oneczna 12, Kraków', '234567890'),
-(3, 'Piotr', 'Wiœniewski', 'ul. Leœna 8, Gdañsk', '345678901'),
-(4, 'Jolanta', 'Wójcik', 'ul. Morska 3, Sopot', '456789012'),
-(5, 'Krzysztof', 'Kowalczyk', 'ul. Górna 15, Wroc³aw', '567890123'),
-(6, 'Magdalena', 'Kamiñska', 'ul. Polna 7, Poznañ', '678901234'),
-(7, 'Tomasz', 'Lewandowski', 'ul. Mi³a 9, £ódŸ', '789012345'),
-(8, 'Joanna', 'Zieliñska', 'ul. Krótka 2, Katowice', '890123456'),
-(9, 'Andrzej', 'Szymañski', 'ul. D³uga 11, Lublin', '901234567'),
-(10, 'Maria', 'WoŸniak', 'ul. Nowa 6, Szczecin', '012345678');
+(2, 'Anna', 'Nowak', 'ul. SÅ‚oneczna 12, KrakÃ³w', '234567890'),
+(3, 'Piotr', 'WiÅ›niewski', 'ul. LeÅ›na 8, GdaÅ„sk', '345678901'),
+(4, 'Jolanta', 'WÃ³jcik', 'ul. Morska 3, Sopot', '456789012'),
+(5, 'Krzysztof', 'Kowalczyk', 'ul. GÃ³rna 15, WrocÅ‚aw', '567890123'),
+(6, 'Magdalena', 'KamiÅ„ska', 'ul. Polna 7, PoznaÅ„', '678901234'),
+(7, 'Tomasz', 'Lewandowski', 'ul. MiÅ‚a 9, ÅÃ³dÅº', '789012345'),
+(8, 'Joanna', 'ZieliÅ„ska', 'ul. KrÃ³tka 2, Katowice', '890123456'),
+(9, 'Andrzej', 'SzymaÅ„ski', 'ul. DÅ‚uga 11, Lublin', '901234567'),
+(10, 'Maria', 'WoÅºniak', 'ul. Nowa 6, Szczecin', '012345678');
 
 
--- Wype³nienie tabeli pensja
+-- WypeÅ‚nienie tabeli pensja
 INSERT INTO ksiegowosc.pensja (id_pensji, stanowisko, kwota) VALUES
 (1, 'Kierownik', 5000.00),
 (2, 'Starszy specjalista', 3500.00),
 (3, 'Specjalista', 2800.00),
-(4, 'M³odszy specjalista', 2200.00),
+(4, 'MÅ‚odszy specjalista', 2200.00),
 (5, 'Pracownik', 1800.00),
-(6, 'Sta¿ysta', 1200.00),
+(6, 'StaÅ¼ysta', 1200.00),
 (7, 'Dyrektor', 8000.00),
 (8, 'Asystent', 2000.00),
 (9, 'Konsultant', 3200.00),
 (10, 'Koordynator', 3000.00);
 
 
--- Wype³nienie tabeli premia
+-- WypeÅ‚nienie tabeli premia
 INSERT INTO ksiegowosc.premia (id_premii, rodzaj, kwota) VALUES
 (1, 'Uznaniowa', 500.00),
-(2, 'Œwi¹teczna', 800.00),
+(2, 'ÅšwiÄ…teczna', 800.00),
 (3, 'Roczna', 1200.00),
 (4, 'Kwartalna', 400.00),
 (5, 'Projektowa', 1000.00),
-(6, 'Efektywnoœciowa', 600.00),
+(6, 'EfektywnoÅ›ciowa', 600.00),
 (7, 'Frekwencyjna', 300.00),
-(8, 'Sprzeda¿owa', 700.00),
+(8, 'SprzedaÅ¼owa', 700.00),
 (9, 'Jubileuszowa', 1500.00),
 (10, 'Motywacyjna', 450.00);
 
 
--- Wype³nienie tabeli godziny
+-- WypeÅ‚nienie tabeli godziny
 INSERT INTO ksiegowosc.godziny (id_godziny, data, liczba_godzin, id_pracownika) VALUES
 (1, '2024-01-31', 160, 1),
 (2, '2024-01-31', 170, 2),
@@ -118,7 +118,7 @@ INSERT INTO ksiegowosc.godziny (id_godziny, data, liczba_godzin, id_pracownika) 
 (10, '2024-01-31', 168, 10);
 
 
--- Wype³nienie tabeli wynagrodzenie
+-- WypeÅ‚nienie tabeli wynagrodzenie
 INSERT INTO ksiegowosc.wynagrodzenie (id_wynagrodzenia, data, id_pracownika, id_godziny, id_pensji, id_premii) VALUES
 (1, '2024-01-31', 1, 1, 1, 1),
 (2, '2024-01-31', 2, 2, 2, 2),
@@ -140,7 +140,7 @@ from ksiegowosc.pracownicy;
 select w.id_pracownika
 from ksiegowosc.wynagrodzenie w
 join ksiegowosc.pensja p on w.id_pensji = p.id_pensji
-where p.kwota > 2000;
+where p.kwota > 1000;
 
 --c
 select w.id_pracownika
@@ -189,7 +189,7 @@ order by pe.kwota ;
 
 --j
 select p.imie, p.nazwisko, pe.kwota as podstawa, pr.kwota as bonusy, 
-case when pr.kwota is null then pe.kwota else pe.kwota + pr.kwota end as suma --aby nie pojawia³ siê b³¹d przy sumowaniu z Nullem doda³em taki warunek 
+case when pr.kwota is null then pe.kwota else pe.kwota + pr.kwota end as suma --aby nie pojawiaÅ‚ siÄ™ bÅ‚Ä…d przy sumowaniu z Nullem dodaÅ‚em taki warunek 
 from ksiegowosc.pracownicy p
 join ksiegowosc.wynagrodzenie w on p.id_pracownika = w.id_pracownika
 join ksiegowosc.pensja pe on w.id_pensji = pe.id_pensji
@@ -237,5 +237,6 @@ where id_pracownika in (
     from ksiegowosc.wynagrodzenie w
     join ksiegowosc.pensja p on w.id_pensji = p.id_pensji
     where p.kwota < 1200);
+
 
 
