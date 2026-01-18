@@ -3,7 +3,7 @@
 #    Command line to run this workspace:
 #        "C:\Program Files\FME\fme.exe" "C:\Users\nikie\GEOINFORMATYKA\sem5\Bazy danych przestrzennych\BDP11.fmw"
 #          --email "nikiel1mikolaj@gmail.com"
-#          --haslo "********"
+#          --haslo ""
 #          --email_klienta "nikiel1mikolaj@gmail.com"
 #          --powiat "powiat inowrocławski"
 #          --pokrycie "100"
